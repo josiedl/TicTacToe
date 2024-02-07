@@ -66,4 +66,20 @@ public class Square {
     public String toString() {
         return this.marker;
     }
+
+    public void draw(Graphics g) {
+        int sideLength = 100;
+        g.setColor(Color.BLACK);
+        g.drawRect(100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength);
+        if (isWinningSquare) {
+            g.setColor(Color.GREEN);
+            g.fillRect(100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength);
+        }
+        if (marker.equals(TicTacToe.O_MARKER)) {
+            g.drawImage(o, 100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength, board);
+        }
+        else if (marker.equals(TicTacToe.X_MARKER)) {
+            g.drawImage(x, 100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength, board);
+        }
+    }
 }

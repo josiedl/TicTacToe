@@ -121,6 +121,7 @@ public class TicTacToe
             int col = input.nextInt();
             if(this.pickLocation(row, col)) {
                 this.takeTurn(row, col);
+                window.repaint();
             } else {
                 System.out.println("That space is taken, or you entered an invalid row/col");
             }
@@ -141,6 +142,7 @@ public class TicTacToe
                 this.winner = X_MARKER;
                 System.out.println("X Wins!");
             }
+            window.repaint();
         }
     }
 
