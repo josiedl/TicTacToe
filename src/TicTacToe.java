@@ -45,10 +45,10 @@ public class TicTacToe
      * The view is initialized with this TicTacToe object
      */
     public TicTacToe() {
-        // Initialize window
-        window = new TicTacToeViewer(this);
         // Initialize Squares in the board
         this.board = new Square[3][3];
+        // Initialize window
+        window = new TicTacToeViewer(this);
         for(int row = 0; row < this.board.length; row++) {
             for(int col = 0; col< this.board[row].length; col++) {
                 this.board[row][col] = new Square(row, col, window);

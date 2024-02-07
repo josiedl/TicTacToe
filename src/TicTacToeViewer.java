@@ -30,7 +30,15 @@ public class TicTacToeViewer extends JFrame {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                board.getBoard()[i][j].draw(g);
+                g.drawRect(100 + (100 * i), 100 + (100 * j), 100, 100);
+            }
+        }
+
+        if (board.getBoard()[0][0] != null) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    board.getBoard()[i][j].draw(g);
+                }
             }
         }
 

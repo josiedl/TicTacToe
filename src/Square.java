@@ -70,10 +70,15 @@ public class Square {
     public void draw(Graphics g) {
         int sideLength = 100;
         g.setColor(Color.BLACK);
-        g.drawRect(100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength);
         if (isWinningSquare) {
             g.setColor(Color.GREEN);
             g.fillRect(100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength);
+            g.setColor(Color.BLACK);
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    g.drawRect(100 + (100 * i), 100 + (100 * j), 100, 100);
+                }
+            }
         }
         if (marker.equals(TicTacToe.O_MARKER)) {
             g.drawImage(o, 100 + (col * sideLength), 100 + (row * sideLength), sideLength, sideLength, board);
